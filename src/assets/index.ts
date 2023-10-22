@@ -1,4 +1,4 @@
-import icon from './icone.svg';
+import icon from './icon.svg';
 
 export {
   icon

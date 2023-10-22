@@ -18,7 +18,13 @@ const config: GatsbyConfig = {
         ],
       }
     },
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: './src/assets/icon.svg',
+      },
+    },
   ],
 }
 
