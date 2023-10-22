@@ -17,7 +17,8 @@ const config: GatsbyConfig = {
           `roboto\:400,700`
         ],
       }
-    }
+    },
+    `gatsby-plugin-styled-components`
   ],
 }
 
