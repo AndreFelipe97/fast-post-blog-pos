@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -24,7 +25,7 @@ export const UserRole = styled.span`
   margin-bottom: 24px;
 `;
 
-export const EditButton = styled.button`
+export const EditButton = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,6 +39,8 @@ export const EditButton = styled.button`
   font-size: 16px;
   color: #00B37E;
   font-weight: 700;
+
+  text-decoration: none;
 
   svg {
     color: #00B37E;
