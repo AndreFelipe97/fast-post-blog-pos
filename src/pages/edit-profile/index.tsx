@@ -1,7 +1,16 @@
 import * as React from "react"
 import type { PageProps } from "gatsby"
 import { Layout } from "../../components/_layout";
-import { BackButton, ButtonContent, Container, FieldContent, FormContent, ImageField, Input, SaveButton, TitleContent } from "./styles";
+import { BackButton, 
+  ButtonContent, 
+  Container, 
+  FieldContent, 
+  FormContent, 
+  ImageField, 
+  Input, 
+  SaveButton, 
+  TitleContent 
+} from "../../styles/pages/edit-profile/styles";
 
 const EditProfilePage: React.FC<PageProps> = () => {
   return (

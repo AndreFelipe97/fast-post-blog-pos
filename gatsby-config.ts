@@ -25,6 +25,13 @@ const config: GatsbyConfig = {
         icon: './src/assets/icon.svg',
       },
     },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/pages/`,
+        ignore: ['*.(ts)']
+      },
+    },
   ],
 }
 
