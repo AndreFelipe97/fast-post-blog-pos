@@ -1,5 +1,7 @@
 import * as React from "react"
 import { Link, HeadFC, PageProps } from "gatsby"
+import { Layout } from "../components/_layout"
+import { Container } from "../styles/pages/404/styles"
 
 const pageStyles = {
   color: "#232129",
@@ -25,22 +27,16 @@ const codeStyles = {
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Layout>
+      <Container>
+        <h1 style={headingStyles}>Página não encontrada</h1>
+        <p style={paragraphStyles}>
+          Desculpa 😔, Não encontramos o que você procura.
+          <br />
+          <Link to="/">Voltar para página principal</Link>.
+        </p>
+      </Container>
+    </Layout>
   )
 }
 
