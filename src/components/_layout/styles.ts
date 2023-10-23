@@ -4,6 +4,6 @@ export const Content = styled.main`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 32px;
-  padding: 32px 160px 150px;
+  gap: 3.2rem;
+  padding: 3.2rem 16rem 15rem;
 `;

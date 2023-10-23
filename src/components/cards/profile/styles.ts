@@ -6,37 +6,37 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 256px;
-  height: 294px;
+  width: 25.6rem;
+  height: 29.4rem;
   background-color: #202024;
   border-radius: 8px;
 `;
 
 export const UserName = styled.span`
   color: #E1E1E6;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 700;
-  margin: 16px 0 5px;
+  margin: 1.6rem 0 0.5rem;
 `;
 
 export const UserRole = styled.span`
   color: #8d8d99;
-  font-size: 14px;
-  margin-bottom: 24px;
+  font-size: 1.4rem;
+  margin-bottom: 2.4rem;
 `;
 
 export const EditButton = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 1rem;
   background-color: transparent;
-  width: 192px;
-  height: 50px;
+  width: 19.2rem;
+  height: 5rem;
   border: 1px solid #00B37E;
   border-radius: 8px;
 
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #00B37E;
   font-weight: 700;
 
@@ -44,7 +44,7 @@ export const EditButton = styled(Link)`
 
   svg {
     color: #00B37E;
-    height: 20px;
-    width: 20px;
+    height: 2rem;
+    width: 2rem;
   }
 `;

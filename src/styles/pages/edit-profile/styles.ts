@@ -6,15 +6,15 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   justify-content: center;
-  width: 832px;
+  width: 83.2rem;
   background-color: #202024;
   border-radius: 8px;
-  padding: 40px;
-  gap: 10px;
+  padding: 4rem;
+  gap: 1rem;
 `;
 
 export const TitleContent = styled.div`
-  height: 60px;
+  height: 6rem;
   width: 100%;
   border-bottom: 1px solid #323238;
 `
@@ -22,17 +22,17 @@ export const TitleContent = styled.div`
 export const FormContent = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
 `;
 
 export const FieldContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.5rem;
 
   label {
     color: #e1e1e6;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 700;
   }
 `;
@@ -42,18 +42,18 @@ export const ImageField = styled.input`
     background-color: #00875F;
     color: #FFFFFF;
     border: none;
-    min-height: 40px;
+    min-height: 4rem;
     border-radius: 8px;
   }
 `;
 
 export const Input = styled.input`
-  min-height: 40px;
-  max-width: 752px;
+  min-height: 4rem;
+  max-width: 75.2rem;
   border-radius: 8px;
   background-color: #121214;
   color: #c4c4cc;
-  padding-left: 10px;
+  padding-left: 1rem;
   border-color: #00875F;
 
   &:focus {
@@ -65,16 +65,16 @@ export const ButtonContent = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 1rem;
+  margin-top: 2rem;
 `;
 
 export const SaveButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 108px;
-  height: 49px;
+  width: 10.8rem;
+  height: 4.9rem;
   color: #FFFFFF;
   background-color: #00875F;
   border-radius: 8px;
@@ -85,8 +85,8 @@ export const BackButton = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 108px;
-  height: 49px;
+  width: 10.8rem;
+  height: 4.9rem;
   color: #FFFFFF;
   background-color: #29292E;
   border-radius: 8px;
