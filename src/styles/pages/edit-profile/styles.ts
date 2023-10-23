@@ -11,6 +11,10 @@ export const Container = styled.div`
   border-radius: 8px;
   padding: 4rem;
   gap: 1rem;
+
+  @media (max-width: 1399px) {
+    width: 100%;
+  }
 `;
 
 export const TitleContent = styled.div`
@@ -59,6 +63,10 @@ export const Input = styled.input`
   &:focus {
     outline: 0;
   }
+
+  @media (max-width: 1399px) {
+    max-width: 100%;
+  }
 `;
 
 export const ButtonContent = styled.div`
@@ -67,6 +75,11 @@ export const ButtonContent = styled.div`
   align-items: center;
   gap: 1rem;
   margin-top: 2rem;
+
+  @media (max-width: 799px) {
+    max-width: 100%;
+    flex-direction: column;
+  }
 `;
 
 export const SaveButton = styled.button`
@@ -79,6 +92,10 @@ export const SaveButton = styled.button`
   background-color: #00875F;
   border-radius: 8px;
   border: none;
+
+  @media (max-width: 799px) {
+    width: 100%;
+  }
 `;
 
 export const BackButton = styled(Link)`
@@ -92,4 +109,8 @@ export const BackButton = styled(Link)`
   border-radius: 8px;
   border: none;
   text-decoration: none;
+
+  @media (max-width: 799px) {
+    width: 100%;
+  }
 `;
