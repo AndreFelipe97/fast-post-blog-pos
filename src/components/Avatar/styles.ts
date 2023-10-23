@@ -16,4 +16,8 @@ export const Avatar = styled.div`
     height: 5rem;
     border-radius: 5px;
   }
+
+  svg {
+    color: #8d8d99;
+  }
 `;

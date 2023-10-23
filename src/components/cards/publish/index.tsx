@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { Avatar } from '../../Avatar';
 import { Container, FeedbackContent, ProfileContainer, ProfileContent, PublishContent } from './styles';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../../services/firebase';
 
 export function Publish() {
   const [data, setData] = useState<string>('');
+  const [user] = useAuthState(auth);
 
   return (
     <Container>
       <div>
         <ProfileContainer>
-          <Avatar imageUrl="https://avatars.githubusercontent.com/u/38105957?v=4" />
+          <Avatar imageUrl={user?.photoURL} />
           <ProfileContent>
-            <span>André Felipe</span>
+            <span>{user?.providerData[0].displayName}</span>
             <p>Desenvolvedor full stack</p>
           </ProfileContent>
         </ProfileContainer>
