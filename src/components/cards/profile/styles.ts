@@ -10,6 +10,12 @@ export const Container = styled.div`
   height: 29.4rem;
   background-color: #202024;
   border-radius: 8px;
+
+  @media (max-width: 1399px) {
+    flex-direction: row;
+    width: 100%;
+    height: 10rem;
+  }
 `;
 
 export const UserName = styled.span`

@@ -8,6 +8,10 @@ export const Container = styled.div`
   border-radius: 8px;
   background-color: #202024;
   padding: 4.7rem 4rem;
+
+  @media (max-width: 1399px) {
+    width: 100%;
+  }
 `;
 
 export const ProfileContainer = styled.div`
@@ -76,6 +80,10 @@ export const FeedbackContent = styled.div`
 
     &:focus {
       outline: 0;
+    }
+
+    @media (max-width: 1399px) {
+      max-width: 100%;
     }
   }
 
