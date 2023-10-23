@@ -14,7 +14,27 @@ export const Container = styled.div`
   @media (max-width: 1399px) {
     flex-direction: row;
     width: 100%;
-    height: 10rem;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 4rem;
+  }
+
+  @media (max-width: 520px) {
+    padding-bottom: 1rem;
+  }
+`;
+
+export const ProfileContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  @media (max-width: 800px) {
+    justify-content: center;
+    align-items: flex-start;
   }
 `;
 
@@ -22,7 +42,7 @@ export const UserName = styled.span`
   color: #E1E1E6;
   font-size: 1.6rem;
   font-weight: 700;
-  margin: 1.6rem 0 0.5rem;
+  margin-top: 1.6rem;
 `;
 
 export const UserRole = styled.span`
@@ -52,5 +72,9 @@ export const EditButton = styled(Link)`
     color: #00B37E;
     height: 2rem;
     width: 2rem;
+  }
+
+  @media (max-width: 520px) {
+    width: 100%;
   }
 `;
