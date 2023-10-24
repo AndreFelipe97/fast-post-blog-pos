@@ -10,6 +10,10 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1399px) {
+    width: 100%;
+  }
 `;
 
 export const Spinner = styled.div`
