@@ -23,7 +23,9 @@ const IndexPage: React.FC<PageProps> = () => {
   if (error) {
     return (
       <Layout>
-        {error.message}
+        <Container>
+          {error.message}
+        </Container>
       </Layout>
     );
   }

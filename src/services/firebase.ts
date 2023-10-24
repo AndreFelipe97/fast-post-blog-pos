@@ -19,8 +19,6 @@ const firebaseConfig = {
   measurementId: process.env.GATSBY_FIREBASE_MEASUREMENTID
 };
 
-console.log('firebaseConfig', firebaseConfig)
-
 const app = initializeApp({
   apiKey: process.env.GATSBY_FIREBASE_APIKEY,
   authDomain: process.env.GATSBY_FIREBASE_AUTHDOMAIN,
