@@ -1,5 +1,5 @@
-import { Link } from "gatsby";
-import styled from "styled-components";
+import { Link } from 'gatsby';
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -39,7 +39,7 @@ export const ProfileContent = styled.div`
 `;
 
 export const UserName = styled.span`
-  color: #E1E1E6;
+  color: #e1e1e6;
   font-size: 1.6rem;
   font-weight: 700;
   margin-top: 1.6rem;
@@ -59,17 +59,17 @@ export const EditButton = styled(Link)`
   background-color: transparent;
   width: 19.2rem;
   height: 5rem;
-  border: 1px solid #00B37E;
+  border: 1px solid #00b37e;
   border-radius: 8px;
 
   font-size: 1.6rem;
-  color: #00B37E;
+  color: #00b37e;
   font-weight: 700;
 
   text-decoration: none;
 
   svg {
-    color: #00B37E;
+    color: #00b37e;
     height: 2rem;
     width: 2rem;
   }

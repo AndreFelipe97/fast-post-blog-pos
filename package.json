@@ -13,13 +13,17 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint . --ext .ts --fix"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "babel-plugin-styled-components": "^2.1.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "firebase": "^10.5.0",
     "framer-motion": "^10.16.4",
     "gatsby": "^5.12.4",
@@ -40,6 +44,13 @@
     "@types/node": "^20.3.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint": "^8.52.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-webpack-plugin": "^4.0.1",
+    "gatsby-plugin-eslint": "^4.0.4",
+    "prettier": "3.0.3",
     "typescript": "^5.1.6"
   }
 }

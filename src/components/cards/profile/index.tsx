@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiEdit3 } from "react-icons/fi";
+import { FiEdit3 } from 'react-icons/fi';
 import { Container, EditButton, ProfileContent, UserName, UserRole } from './styles';
 import { Avatar } from '../../Avatar';
 import { useAuthState } from 'react-firebase-hooks/auth';

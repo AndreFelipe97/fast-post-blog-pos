@@ -1,5 +1,4 @@
-declare module "\*.svg" {
-  import React = require("react");
+declare module '*.svg' {
   const ReactComponent: DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>;
   export default ReactComponent;
 }

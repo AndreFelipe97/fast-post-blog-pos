@@ -1,5 +1,5 @@
-import { Link } from "gatsby";
-import styled from "styled-components";
+import { Link } from 'gatsby';
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -21,7 +21,33 @@ export const TitleContent = styled.div`
   height: 6rem;
   width: 100%;
   border-bottom: 1px solid #323238;
-`
+`;
+
+export const DataContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  img {
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+  }
+
+  svg {
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    color: #00b37e;
+    background-color: rgba(141, 141, 153, 0.1);
+  }
+
+  span {
+    font-size: 2rem;
+  }
+`;
 
 export const FormContent = styled.form`
   display: flex;
@@ -41,16 +67,6 @@ export const FieldContent = styled.div`
   }
 `;
 
-export const ImageField = styled.input`
-  &[type=file]::file-selector-button {
-    background-color: #00875F;
-    color: #FFFFFF;
-    border: none;
-    min-height: 4rem;
-    border-radius: 8px;
-  }
-`;
-
 export const Input = styled.input`
   min-height: 4rem;
   max-width: 75.2rem;
@@ -58,7 +74,7 @@ export const Input = styled.input`
   background-color: #121214;
   color: #c4c4cc;
   padding-left: 1rem;
-  border-color: #00875F;
+  border-color: #00875f;
 
   &:focus {
     outline: 0;
@@ -88,8 +104,8 @@ export const SaveButton = styled.button`
   align-items: center;
   width: 10.8rem;
   height: 4.9rem;
-  color: #FFFFFF;
-  background-color: #00875F;
+  color: #ffffff;
+  background-color: #00875f;
   border-radius: 8px;
   border: none;
 
@@ -104,8 +120,8 @@ export const BackButton = styled(Link)`
   align-items: center;
   width: 10.8rem;
   height: 4.9rem;
-  color: #FFFFFF;
-  background-color: #29292E;
+  color: #ffffff;
+  background-color: #29292e;
   border-radius: 8px;
   border: none;
   text-decoration: none;

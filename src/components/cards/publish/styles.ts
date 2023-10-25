@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -76,7 +76,7 @@ export const FeedbackContent = styled.div`
     background-color: #121214;
     padding: 1.3rem 1.6rem 0;
     color: #c4c4cc;
-    border-color: #00875F;
+    border-color: #00875f;
 
     &:focus {
       outline: 0;
@@ -93,15 +93,15 @@ export const FeedbackContent = styled.div`
     align-items: center;
     width: 10.8rem;
     height: 4.9rem;
-    background-color: #00875F;
-    color: #FFFFFF;
+    background-color: #00875f;
+    color: #ffffff;
     font-size: 1.6rem;
     font-weight: 700;
     border-radius: 8px;
     border: none;
 
     &:disabled {
-      background-color: #29292E;
+      background-color: #29292e;
       cursor: not-allowed;
     }
   }
