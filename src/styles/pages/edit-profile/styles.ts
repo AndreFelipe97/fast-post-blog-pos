@@ -34,6 +34,8 @@ export const DataContainer = styled.div`
     height: 12rem;
     width: 12rem;
     border-radius: 50%;
+    background-color: #202024;
+    border: 2px solid #00b37e;
   }
 
   svg {
