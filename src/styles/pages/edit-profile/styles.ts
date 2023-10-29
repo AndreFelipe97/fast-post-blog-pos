@@ -67,6 +67,13 @@ export const FieldContent = styled.div`
     font-size: 1.6rem;
     font-weight: 700;
   }
+
+  p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #f75a68;
+    text-transform: uppercase;
+  }
 `;
 
 export const Input = styled.input`

@@ -1,39 +1,111 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 import { Avatar } from '../../Avatar';
-import { Container, FeedbackContent, ProfileContainer, ProfileContent, PublishContent } from './styles';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../../../services/firebase';
+import {
+  Container,
+  FieldContent,
+  FormContent,
+  Input,
+  ProfileContainer,
+  ProfileContent,
+  PublicationButton,
+  PublishContent,
+  Textarea,
+} from './styles';
+import { api } from '../../../services/axios';
 
-export function Publish() {
-  const [data, setData] = useState<string>('');
-  const [user] = useAuthState(auth);
+interface PublishProps {
+  name: string;
+  email: string;
+  imageUrl: string;
+}
+
+type UserType = {
+  id: string;
+  email: string;
+  role: string;
+};
+
+interface FormData {
+  title: string;
+  post: string;
+}
+
+interface PublicationData {
+  id: string;
+  title: string;
+  post: string;
+}
+
+export function Publish({ name, email, imageUrl }: PublishProps) {
+  const [user, setUser] = useState<UserType>({} as UserType);
+  const [publications, setPublications] = useState<Array<PublicationData>>([]);
+  const schema = yup.object().shape({
+    title: yup.string().required(),
+    post: yup.string().required(),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: yupResolver(schema),
+  });
+
+  async function getValues() {
+    try {
+      const response = (await api.get(`/users/${email}`)).data;
+      const responsePublications = (await api.get(`/publications/${email}`)).data.publications;
+      setUser(response.user);
+      setPublications(responsePublications);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  useEffect(() => {
+    getValues();
+  }, []);
+
+  const onSubmit = handleSubmit(async (data, e) => {
+    e?.preventDefault();
+    console.log(errors);
+    try {
+      await api.post('/publication/', { ...data, userId: user.id });
+    } catch (e) {
+      console.log(e);
+    }
+  });
 
   return (
     <Container>
       <div>
         <ProfileContainer>
-          <Avatar imageUrl={user?.photoURL} />
+          <Avatar imageUrl={imageUrl} />
           <ProfileContent>
-            <span>{user?.providerData[0].displayName}</span>
-            <p>Desenvolvedor full stack</p>
+            <span>{name}</span>
+            <p>{user.role ? user.role : 'Cadastre seu cargo'}</p>
           </ProfileContent>
         </ProfileContainer>
         <PublishContent>
-          <h1>Novo Projeto</h1>
-
-          <p>
-            Fala galeraa 👋. Acabei de subir mais um projeto no meu portifa. 
-            É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do 
-            projeto é DoctorCare 🚀.
-          </p>
+          <FormContent onSubmit={onSubmit}>
+            <FieldContent>
+              <label htmlFor="title">Titulo</label>
+              <Input type="text" id="title" {...register('title')} />
+              <p>{errors.title?.message && 'Titulo é obrigatório'}</p>
+            </FieldContent>
+            <FieldContent>
+              <label htmlFor="post">Publicações</label>
+              <Textarea id="post" {...register('post')} />
+              <p>{errors.post?.message && 'Publicação é obrigatório'}</p>
+            </FieldContent>
+            <PublicationButton>Publicar</PublicationButton>
+          </FormContent>
         </PublishContent>
-        <FeedbackContent>
-          <h1>Deixe seu feedback</h1>
-
-          <textarea value={data} onChange={e => setData(e.target.value)} />
-
-          <button disabled={data ? false : true}>Publicar</button>
-        </FeedbackContent>
+        {publications.map((publication) => publication.title)}
       </div>
     </Container>
   );

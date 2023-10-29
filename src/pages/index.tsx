@@ -37,7 +37,11 @@ const IndexPage: React.FC<PageProps> = () => {
             email={String(user?.email)}
             imageUrl={String(user?.photoURL)}
           />
-          <Publish />
+          <Publish
+            name={String(user?.displayName)}
+            email={String(user?.email)}
+            imageUrl={String(user?.photoURL)}
+          />
         </>
       ) : (
         <Container>
