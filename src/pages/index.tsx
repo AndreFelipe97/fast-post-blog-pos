@@ -32,7 +32,11 @@ const IndexPage: React.FC<PageProps> = () => {
     <Layout>
       {user ? (
         <>
-          <Profile />
+          <Profile
+            name={String(user?.displayName)}
+            email={String(user?.email)}
+            imageUrl={String(user?.photoURL)}
+          />
           <Publish />
         </>
       ) : (
