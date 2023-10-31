@@ -15,6 +15,7 @@ import {
   Textarea,
 } from './styles';
 import { api } from '../../../services/axios';
+import { Post } from '../post';
 
 interface PublishProps {
   name: string;
@@ -50,6 +51,7 @@ export function Publish({ name, email, imageUrl }: PublishProps) {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormData>({
     resolver: yupResolver(schema),
@@ -72,9 +74,10 @@ export function Publish({ name, email, imageUrl }: PublishProps) {
 
   const onSubmit = handleSubmit(async (data, e) => {
     e?.preventDefault();
-    console.log(errors);
     try {
       await api.post('/publication/', { ...data, userId: user.id });
+      reset();
+      getValues();
     } catch (e) {
       console.log(e);
     }
@@ -105,7 +108,14 @@ export function Publish({ name, email, imageUrl }: PublishProps) {
             <PublicationButton>Publicar</PublicationButton>
           </FormContent>
         </PublishContent>
-        {publications.map((publication) => publication.title)}
+        {publications.map((publication) => (
+          <Post
+            key={String(publication.id)}
+            id={publication.id}
+            title={publication.title}
+            post={publication.post}
+          />
+        ))}
       </div>
     </Container>
   );
