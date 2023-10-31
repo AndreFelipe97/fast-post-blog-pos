@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -33,7 +34,7 @@ export const Content = styled.div`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,6 +44,7 @@ export const Button = styled.button`
   height: 3rem;
   border: 1px solid #00b37e;
   border-radius: 8px;
+  text-decoration: none;
 
   font-size: 1.6rem;
   color: #00b37e;

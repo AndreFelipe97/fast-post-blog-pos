@@ -16,7 +16,7 @@ export function Post({ id, title, post }: PostProps) {
           <p>{post.slice(0, 100)}...</p>
         </div>
       </Content>
-      <Button>
+      <Button to={`/post/${id}`}>
         <FiSearch /> Visualizar
       </Button>
     </Container>
