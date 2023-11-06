@@ -32,6 +32,14 @@ const config: GatsbyConfig = {
         ignore: ['*.(ts)']
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: 'blog',
+        path: `${__dirname}/blog`
+      },
+    },
+    "gatsby-plugin-mdx"
   ],
 }
 

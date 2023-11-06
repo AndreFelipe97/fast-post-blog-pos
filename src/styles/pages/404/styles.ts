@@ -10,7 +10,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
   margin-top: 0;
   margin-bottom: 64px;
-  max-width: 320px;
+  max-width: 100%;
 `;
 
 export const Paragraph = styled.p`
