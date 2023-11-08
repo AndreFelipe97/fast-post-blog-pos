@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -57,7 +57,7 @@ export function Publish({ name, email, imageUrl }: PublishProps) {
     resolver: yupResolver(schema),
   });
 
-  async function getValues() {
+  const getValues = useCallback(async () => {
     try {
       const response = (await api.get(`/users/${email}`)).data;
       const responsePublications = (await api.get(`/publications/${email}`)).data.publications;
@@ -66,7 +66,7 @@ export function Publish({ name, email, imageUrl }: PublishProps) {
     } catch (e) {
       console.log(e);
     }
-  }
+  }, []);
 
   useEffect(() => {
     getValues();

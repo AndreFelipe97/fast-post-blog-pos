@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { FiEdit3 } from 'react-icons/fi';
 import { Container, EditButton, ProfileContent, UserName, UserRole } from './styles';
 import { Avatar } from '../../Avatar';
@@ -19,14 +19,14 @@ type UserType = {
 export function Profile({ name, email, imageUrl }: ProfileProps) {
   const [user, setUser] = useState<UserType>({} as UserType);
 
-  async function getValues() {
+  const getValues = useCallback(async () => {
     try {
       const response = (await api.get(`/users/${email}`)).data;
       setUser(response.user);
     } catch (e) {
       console.log(e);
     }
-  }
+  }, []);
 
   useEffect(() => {
     getValues();
