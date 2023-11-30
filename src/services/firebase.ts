@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import { getFirestore, query, getDocs, collection, where, addDoc } from 'firebase/firestore';
+import { api } from './axios';
 
 const app = initializeApp({
   apiKey: process.env.GATSBY_FIREBASE_APIKEY,
@@ -29,6 +30,10 @@ const signInWithGoogle = async () => {
         email: user.email,
       });
     }
+    await api.post(`/users`, {
+      email: user?.email,
+      role: '',
+    });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     console.error(err);
